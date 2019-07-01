@@ -6,8 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-ffmpeg = "*"
 ipfshttpclient = "*"
+ffmpeg-python = "*"
 
 [requires]
 python_version = "3.7"
