@@ -7,13 +7,13 @@ Converts an input media to HLS, optionally adding output chunks to IPFS and gene
 #### CLI
 
 ````bash
-src/cli.py --help
+python3 src/cli.py --help
 ````
 
 For example, to convert `examples/input.mp4` to HLS, add the output chunks to IPFS and generate M3U8 playlists containing their IPFS hashes:
 
 ```bash
-src/cli.py --ipfs --input-file examples/input.mp4
+python3 src/cli.py --ipfs --input-file examples/input.mp4
 ```
 
 #### Module
