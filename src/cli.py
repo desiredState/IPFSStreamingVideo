@@ -44,4 +44,4 @@ if args.ipfs:
         file_path=f'{args.output_dir}/{args.master_filename}'
     )
 
-    print(f"Master playlist published to http://127.0.0.1:8080/ipfs/{ipfs_add_response_master_m3u8['Hash']}")
+    print(f"Master playlist added to IPFS as http://127.0.0.1:8080/ipfs/{ipfs_add_response_master_m3u8['Hash']}")
