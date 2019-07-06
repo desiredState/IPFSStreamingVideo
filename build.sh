@@ -9,8 +9,6 @@ usage: factory [-h] {build,test,push,all} ...
 positional arguments:
   {build,test,push,all}
     build               build the Docker Image
-    test                run tests
-    buildtest           both of the above in that order
     push                push the Docker Image
 
 optional arguments:
@@ -24,7 +22,7 @@ function check_deps {
 
     for i in "${DEPS[@]}"; do
         if ! hash "${i}" 2>/dev/null; then
-            echo -e "${RED}FACTORY > "${i}" is required to run. Please install it then try again.${NONE}"
+            echo -e "${RED}BUILD > "${i}" is required. Please install it then try again.${NONE}"
             exit 1
         fi
     done
@@ -32,20 +30,16 @@ function check_deps {
 
 function build {
     # Build Docker Image.
-    echo -e "${MAGENTA}FACTORY > Building the ${NAMESPACE}/${IMAGE}:${TAG} Docker Image...${NONE}"
+    echo -e "${MAGENTA}BUILD > Building the ${NAMESPACE}/${IMAGE}:${TAG} Docker Image...${NONE}"
     docker build -t "${NAMESPACE}/${IMAGE}:${TAG}" .
-    echo -e "${GREEN}FACTORY > OK.${NONE}"
-}
-
-function test {
-    VERSION="${TAG}" UPDATE=${UPDATE} ./wrapper.sh "${@}"
+    echo -e "${GREEN}BUILD > OK.${NONE}"
 }
 
 function push {
     # Push Docker Image.
-    echo -e "${MAGENTA}FACTORY > Pushing the ${NAMESPACE}/${IMAGE}:${TAG} Docker Image...${NONE}"
+    echo -e "${MAGENTA}BUILD > Pushing the ${NAMESPACE}/${IMAGE}:${TAG} Docker Image...${NONE}"
     docker push "${NAMESPACE}/${IMAGE}:${TAG}"
-    echo -e "${GREEN}FACTORY > OK.${NONE}"
+    echo -e "${GREEN}BUILD > OK.${NONE}"
 }
 
 # Environment variable overrides.
@@ -65,13 +59,6 @@ case $1 in
     build)
         build
         ;;
-    test)
-        test "${@:2}"
-        ;;
-    buildtest)
-        build
-        test "${@:2}"
-        ;;
     push)
         push
         ;;
@@ -80,4 +67,4 @@ case $1 in
         exit 1
 esac
 
-echo -e "${GREEN}FACTORY > Finished.${NONE}"
+echo -e "${GREEN}BUILD > Finished.${NONE}"
