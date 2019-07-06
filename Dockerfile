@@ -22,9 +22,6 @@ RUN addgroup -S project && \
 RUN echo "project ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/project && \
     chmod 0440 /etc/sudoers.d/project
 
-RUN mkdir /home/project/tmp && \
-    chown project:project /home/project/tmp
-
 WORKDIR /home/project
 
 COPY src .
