@@ -1,7 +1,5 @@
 ![banner](https://raw.githubusercontent.com/desiredState/IPFSStreamingVideo/master/docs/img/github-banner.png "IPFS Streaming Video")
 
-# IPFS Streaming Video
-
 Converts an input video file to HLS at multiple qualities, optionally adding output chunks and amended m3u8 playlists to IPFS.
 
 ## Usage
