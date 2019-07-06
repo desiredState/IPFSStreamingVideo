@@ -1,21 +1,25 @@
 # IPFS Streaming Video
 
-Converts an input media to HLS, optionally adding output chunks to IPFS and generating M3U8 playlists containing their IPFS hashes.
+Converts an input video file to HLS at multiple qualities, optionally adding output chunks and amended M3U8 playlists to IPFS.
 
 ### Usage
 
-#### CLI
+#### Command-Line Interface
 
 ````bash
 python3 src/cli.py --help
 ````
 
-For example, to convert `examples/input.mp4` to HLS, add the output chunks to IPFS and generate M3U8 playlists containing their IPFS hashes:
+For example:
 
 ```bash
 python3 src/cli.py --ipfs --input-file examples/input.mp4
 ```
 
-#### Module
+#### Python Module
 
-An example of `IPFSStreamingVideo()` module usage can be seen in `src/cli.py`
+An example of `IPFSStreamingVideo()` Python module usage can be seen in `src/cli.py`
+
+#### Web Player
+
+An example HLS-capable web player can be found at `examples/player.html`, which can also be added to IPFS! Just change M3U8 playlist hash in `player.html` to the one returned by the CLI.
