@@ -1,3 +1,6 @@
+<!-- This is an example HLS-capable media player -->
+<!-- Just replace "MASTER_PLAYLIST_HASH" below with the one returned by IPFSStreamingVideo (CLI/Module) -->
+<!-- This page and it's resources (js) could also be added to IPFS for complete decentralisation -->
 <html>
 <head>
     <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
@@ -7,7 +10,7 @@
 <h1>IPFS Streaming Video example</h1>
 <video class='video-js' controls data-setup='{}' height='720' id='ipfs-streaming-video' poster='' preload='auto'
        width='1280'>
-    <source src='http://127.0.0.1:8080/ipfs/Qmc2b6gLmhgq8pQ17nuU4ztgZUefPwewVM7kBtDjqXL5vM'
+    <source src='http://127.0.0.1:8080/ipfs/MASTER_PLAYLIST_HASH'
             type='application/x-mpegURL'>
     <p class='vjs-no-js'>
         To view this video please enable JavaScript, and consider upgrading to a web browser that
